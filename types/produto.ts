@@ -1,6 +1,5 @@
 export interface Produto {
-  id: number;
+  id: string;
   nome: string;
   preco: number;
-  fotoBase64: string;
 }

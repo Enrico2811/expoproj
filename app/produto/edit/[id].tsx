@@ -1,28 +1,7 @@
-import { ThemedText } from "@/components/themed-text";
-import { ThemedView } from "@/components/themed-view";
-import { useLocalSearchParams, useRouter } from "expo-router";
-import { Pressable, StyleSheet } from "react-native";
+import ProdutoEditScreen from "@/features/produtos/ProdutoEditScreen";
+import { useLocalSearchParams } from "expo-router";
 
 export default function Edit() {
-  const params = useLocalSearchParams();
-  const router = useRouter();
-  return (
-    <ThemedView style={{ flex: 1, marginTop: 20, alignItems: "center" }}>
-      <ThemedText>Editar Produto - ID: {params.id}</ThemedText>
-      <Pressable onPress={() => router.back()} style={styles.botaoVoltar}>
-        <ThemedText>Voltar</ThemedText>
-      </Pressable>
-    </ThemedView>
-  );
+  const { id }: { id: string } = useLocalSearchParams();
+  return <ProdutoEditScreen id={id} />;
 }
-
-const styles = StyleSheet.create({
-  botaoVoltar: {
-    color: "white",
-    marginTop: 20,
-    backgroundColor: "#9999FF",
-    padding: 1,
-    borderRadius: 5,
-    width: 120,
-  },
-});
