@@ -99,7 +99,7 @@ export default function ProdutoListScreen() {
                   params: { id: item.id },
                 })
               } // navegação para tela de exclusão de produto
-              style={styles.botaoEditar}
+              style={styles.botaoExcluir}
             >
               <ThemedText>Excluir</ThemedText>
             </Pressable>
@@ -116,6 +116,15 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginLeft: 5,
     backgroundColor: "#9999FF",
+    padding: 0,
+    borderRadius: 5,
+    width: 60,
+  },
+  botaoExcluir: {
+    color: "white",
+    marginTop: 5,
+    marginLeft: 5,
+    backgroundColor: "#FF3B30",
     padding: 0,
     borderRadius: 5,
     width: 60,
